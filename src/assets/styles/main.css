@@ -1,8 +1,47 @@
-html, body {
+html {
   margin: 0;
   padding: 0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f6f8f9;
+  color: #23362a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+[role='button'] {
+  touch-action: manipulation;
 }
 
 #app {
   min-height: 100vh;
+  min-height: 100dvh;
 }

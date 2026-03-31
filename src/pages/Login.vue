@@ -1,17 +1,17 @@
-<template>
+﻿<template>
   <div class="login-bg">
     <header class="header">
-      <img :src="gfcsLogo" alt="GFCS Logo" class="logo" />
+      <img :src="logo" alt="GFCS Logo" class="logo" />
     </header>
+
     <main class="main">
       <section class="form-section">
         <h2 class="title">Approval System</h2>
 
         <div class="login-card">
-          <h3 class="login-title">เข้าสู่ระบบ</h3>
+          <h3 class="login-title">Sign In</h3>
 
           <form @submit.prevent="handleLogin" class="pretty-form">
-            <!-- Username -->
             <div class="row">
               <div class="label-col">Username</div>
               <div class="control-col">
@@ -33,17 +33,16 @@
                     v-model="username"
                     autocomplete="username"
                     :disabled="isLoading"
-                    placeholder="กรอกชื่อผู้ใช้"
+                    placeholder="Enter username"
                     :aria-invalid="!!usernameErr"
                     @input="usernameErr = ''"
-                    @keyup.enter.prevent="focusPass()"
+                    @keyup.enter.prevent="focusPass"
                   />
                 </div>
                 <p v-if="usernameErr" class="err-text">{{ usernameErr }}</p>
               </div>
             </div>
 
-            <!-- Password -->
             <div class="row">
               <div class="label-col">Password</div>
               <div class="control-col">
@@ -67,7 +66,7 @@
                     v-model="password"
                     autocomplete="current-password"
                     :disabled="isLoading"
-                    placeholder="กรอกรหัสผ่าน"
+                    placeholder="Enter password"
                     :aria-invalid="!!passwordErr"
                     @input="passwordErr = ''"
                     @keyup.enter.prevent="handleLogin"
@@ -77,7 +76,7 @@
                     type="button"
                     class="ctrl-append"
                     :disabled="isLoading"
-                    :title="showPass ? 'ซ่อนรหัส' : 'แสดงรหัส'"
+                    :title="showPass ? 'Hide password' : 'Show password'"
                     :aria-pressed="showPass ? 'true' : 'false'"
                     @click="showPass = !showPass"
                   >
@@ -106,25 +105,23 @@
             </div>
 
             <button type="submit" class="login-btn" :disabled="isLoading">
-              <span v-if="!isLoading">เข้าสู่ระบบ</span>
-              <span v-else>กำลังตรวจสอบ...</span>
+              <span v-if="!isLoading">Sign In</span>
+              <span v-else>Checking...</span>
             </button>
           </form>
         </div>
       </section>
     </main>
 
-    <!-- Loading Overlay -->
     <transition name="fade-fast">
       <div v-if="isLoading" class="overlay" aria-busy="true" aria-live="polite">
         <div class="loader-wrap">
           <div class="spinner"></div>
-          <div class="loader-text">กำลังตรวจสอบข้อมูลเข้าสู่ระบบ...</div>
+          <div class="loader-text">Verifying your sign-in information...</div>
         </div>
       </div>
     </transition>
 
-    <!-- Error Backdrop -->
     <transition name="fade-fast">
       <div
         v-if="showError"
@@ -149,7 +146,7 @@
             <strong>{{ errorTitle }}</strong>
           </div>
           <p class="error-body">{{ errorMsg }}</p>
-          <button class="error-close" @click="dismissError">ปิด</button>
+          <button class="error-close" @click="dismissError">Close</button>
         </div>
       </div>
     </transition>
@@ -158,12 +155,14 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter, useRoute } from 'vue-router' // ⬅️ ใช้ router/route
+import { useRouter, useRoute } from 'vue-router'
 import axios from 'axios'
-import gfcsLogo from '@/assets/images/gfcs_logo_green.png'
+import logo from '@/assets/images/gfcs_logo_green.png'
+import { useAuthStore } from '@/stores/auth'
 
 const router = useRouter()
 const route = useRoute()
+const authStore = useAuthStore()
 
 const username = ref('')
 const password = ref('')
@@ -171,78 +170,27 @@ const passRef = ref(null)
 
 const usernameErr = ref('')
 const passwordErr = ref('')
-
 const showPass = ref(false)
 const isLoading = ref(false)
 const showError = ref(false)
 const errorMsg = ref('')
-const errorTitle = ref('ไม่สามารถเข้าสู่ระบบได้')
+const errorTitle = ref('Unable to sign in')
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
-
-const pickMessage = (data) => {
-  try {
-    if (!data) return ''
-    if (typeof data === 'string') {
-      const text = data
-        .replace(/<[^>]*>/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim()
-      return text.slice(0, 400)
-    }
-    if (typeof data.message === 'string') return data.message
-    if (typeof data.msg === 'string') return data.msg
-    if (typeof data.error_message === 'string') return data.error_message
-    if (typeof data.error === 'string') return data.error
-    if (typeof data.detail === 'string') return data.detail
-    if (Array.isArray(data.errors) && data.errors.length) {
-      const e0 = data.errors[0]
-      return typeof e0 === 'string' ? e0 : e0?.message || e0?.detail || ''
-    }
-    if (data.error && typeof data.error === 'object') return pickMessage(data.error)
-    return ''
-  } catch {
-    return ''
-  }
-}
-
-const extractErrorShape = (err) => {
-  let status, message
-  if (err?.response) {
-    status = err.response.status
-    message = pickMessage(err.response.data) || err.response.statusText || ''
-  } else if (err?.data) {
-    status = err.status
-    message = pickMessage(err.data)
-  } else if (typeof err === 'string') {
-    message = err
-  } else if (err?.message) {
-    message = err.message
-  }
-  return { status, message }
-}
-
-const normalizeNonAuthMessage = (info) => {
-  const m = (info.message || '').trim()
-  if ((info.status && info.status >= 500) || /^internal server error$/i.test(m)) {
-    return 'ระบบขัดข้อง กรุณาลองใหม่ภายหลัง'
-  }
-  if (m) return m
-  return 'ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ กรุณาลองใหม่อีกครั้ง'
-}
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const dismissError = () => {
   showError.value = false
 }
-const showNiceError = (message, title = 'ไม่สามารถเข้าสู่ระบบได้') => {
+
+const showNiceError = (message, title = 'Unable to sign in') => {
   errorTitle.value = title
-  errorMsg.value = message || 'เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ'
+  errorMsg.value = message || 'An unknown error occurred.'
   showError.value = true
 }
 
 const focusPass = () => passRef.value?.focus()
 
-function validateInputs() {
+const validateInputs = () => {
   usernameErr.value = ''
   passwordErr.value = ''
 
@@ -250,21 +198,24 @@ function validateInputs() {
   const p = password.value
 
   if (!u && !p) {
-    usernameErr.value = 'กรุณากรอกชื่อผู้ใช้'
-    passwordErr.value = 'กรุณากรอกรหัสผ่าน'
-    showNiceError('กรุณากรอกชื่อผู้ใช้และรหัสผ่าน')
+    usernameErr.value = 'Please enter your username.'
+    passwordErr.value = 'Please enter your password.'
+    showNiceError('Please enter your username and password.')
     return false
   }
+
   if (!u) {
-    usernameErr.value = 'กรุณากรอกชื่อผู้ใช้'
-    showNiceError('กรุณากรอกชื่อผู้ใช้')
+    usernameErr.value = 'Please enter your username.'
+    showNiceError('Please enter your username.')
     return false
   }
+
   if (!p) {
-    passwordErr.value = 'กรุณากรอกรหัสผ่าน'
-    showNiceError('กรุณากรอกรหัสผ่าน')
+    passwordErr.value = 'Please enter your password.'
+    showNiceError('Please enter your password.')
     return false
   }
+
   username.value = u
   return true
 }
@@ -272,101 +223,82 @@ function validateInputs() {
 const handleLogin = async () => {
   if (isLoading.value) return
   if (!validateInputs()) {
-    if (usernameErr.value) {
-      document.getElementById('username')?.focus()
-    } else if (passwordErr.value) {
-      passRef.value?.focus()
-    }
+    if (usernameErr.value) document.getElementById('username')?.focus()
+    else if (passwordErr.value) passRef.value?.focus()
     return
   }
 
   showError.value = false
   errorMsg.value = ''
   isLoading.value = true
-
   const minLoad = sleep(350)
 
-  // 1) AUTH (AD)
   try {
-    const res = await axios.post(import.meta.env.VITE_API_APP_URL + '/auth_ad', {
+    const authRes = await axios.post(`${import.meta.env.VITE_API_APP_URL}/auth_ad`, {
       username: username.value,
       password: password.value,
     })
-    if (!res.data?.success) {
+
+    if (!authRes.data?.success) {
       await minLoad
       isLoading.value = false
-      showNiceError('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง')
+      showNiceError('Invalid username or password.')
       return
     }
   } catch (err) {
     await minLoad
     isLoading.value = false
-    if (!err?.response) showNiceError('ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ กรุณาลองใหม่อีกครั้ง')
-    else showNiceError('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง')
+    showNiceError(
+      err?.response?.data?.message ||
+        'Unable to connect to the authentication server. Please try again.'
+    )
     return
   }
 
-  // 2) GETUSER (แปลงผลลัพธ์ให้เป็น object เสมอ)
   try {
-    const APP_ID = import.meta.env.VITE_APP_ID // ✅ ต้องขึ้นต้นด้วย VITE_
-    //http://vrf.gfcs.co.th:4002
-    const resUser = await axios.post(import.meta.env.VITE_API_VALIDATE_USER_URL + '/getuserinfo', {
+    const resUser = await axios.post(`${import.meta.env.VITE_API_APP_URL}/getuserinfo`, {
       username: username.value,
-      password: password.value,
-      app_id: APP_ID,
+      app_id: import.meta.env.VITE_APP_ID,
     })
 
-    // normalize: รองรับ object / [obj] / [[obj]]
-    const raw = resUser.data
-    const user = Array.isArray(raw) ? (Array.isArray(raw[0]) ? raw[0][0] : raw[0]) : raw
+    const { user: userData, access_token } = resUser.data
 
-    if (!user?.username) {
+    if (!userData?.username) {
       await minLoad
       isLoading.value = false
-      showNiceError('ชื่อผู้ใช้ยังไม่ถูกลงทะเบียนในระบบ')
+      showNiceError('User account is not registered for this application')
       return
     }
 
-    // ✅ เก็บข้อมูลผู้ใช้ + token
-    localStorage.setItem('user', JSON.stringify(user))
-    const opaqueToken = `ok.${Date.now().toString(36)}.${encodeURIComponent(user.username)}`
-    localStorage.setItem('authToken', opaqueToken)
+    authStore.setAuth(userData, access_token)
   } catch (err) {
     await minLoad
-    const info = extractErrorShape(err)
     isLoading.value = false
-    showNiceError(normalizeNonAuthMessage(info))
+    const msg = err?.response?.data?.message || 'Unable to load user data.'
+    showNiceError(msg)
     return
   }
 
   await minLoad
   isLoading.value = false
 
-  // debug เล็กน้อย
-  console.log('authToken =', localStorage.getItem('authToken'))
-  console.log('user =', localStorage.getItem('user'))
-
-  // ✅ redirect กลับหน้าที่ตั้งไว้ (หรือ /main)
   const redirect = (route.query.redirect && String(route.query.redirect)) || '/main'
   router.replace(redirect)
 }
 </script>
 
-
 <style scoped>
-/* ===== Base layout ===== */
 .login-bg {
   min-height: 100vh;
-  min-width: 100vw;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100dvh;
+  min-width: 320px;
   background: #f6f8f9;
   display: flex;
   flex-direction: column;
 }
 
 .header {
-  width: 100vw;
+  width: 100%;
   height: clamp(60px, 8vh, 88px);
   background: linear-gradient(90deg, #178f43 70%, #98e2aa 100%);
   display: flex;
@@ -377,283 +309,216 @@ const handleLogin = async () => {
 }
 
 .logo {
-  height: clamp(36px, 6vh, 64px);
+  height: 38px;
   object-fit: contain;
 }
 
-/* ⬆️ ย้ายโซนแดงขึ้นบน: จัดชิดบน + padding-top เล็กน้อย (responsive) */
 .main {
   flex: 1;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* เดิม center */
-  padding-top: clamp(16px, 9vh, 120px);
-  /* ระยะจากแถบเขียวด้านบน */
+  padding-top: clamp(32px, 10vh, 96px);
+  padding-bottom: 24px;
+  padding-inline: 16px;
 }
 
-/* ===== Fluid sizing tokens (การ์ด + ฟอร์ม) ===== */
 .login-card {
-  width: clamp(480px, 36vw, 760px);
+  width: min(100%, 760px);
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-  padding: clamp(20px, 3vw, 32px) clamp(18px, 2.5vw, 28px);
-  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  padding: clamp(22px, 2.4vw, 36px);
 }
 
 .form-section {
-  width: 100%;
+  width: min(92vw, 920px);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .title {
+  margin: 0 0 16px;
+  font-size: clamp(26px, 2.6vw, 36px);
+  color: #1f5130;
+  font-weight: 800;
+  letter-spacing: 0.02em;
   text-align: center;
-  color: #178f43;
-  font-weight: 700;
-  font-style: italic;
-  font-size: clamp(2.1rem, 2.4vw, 3.2rem);
-  margin-bottom: clamp(18px, 2.6vh, 30px);
-  margin-top: 0;
 }
 
 .login-title {
+  margin: 0 0 24px;
   text-align: center;
-  color: #2c2c2c;
-  font-weight: 800;
-  font-size: clamp(1rem, 1.05vw, 1.3rem);
-  margin-bottom: clamp(10px, 1.8vh, 18px);
+  font-size: 22px;
+  color: #243b2c;
 }
 
-/* ===== Pretty form ===== */
 .pretty-form {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(10px, 1.6vh, 16px);
+  display: grid;
+  gap: 18px;
 }
 
 .row {
   display: grid;
-  grid-template-columns: clamp(110px, 12vw, 160px) 1fr;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
   align-items: center;
-  gap: clamp(10px, 1.4vw, 14px);
 }
 
 .label-col {
-  justify-self: end;
   font-weight: 700;
-  color: #2d3748;
-  font-size: clamp(0.95rem, 0.9vw, 1.05rem);
+  color: #23362a;
 }
 
 .control-col {
-  width: 100%;
+  min-width: 0;
 }
 
-/* control */
 .control {
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 44px 1fr 52px;
   align-items: center;
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #d3d8dd;
   border-radius: 12px;
-  padding: clamp(8px, 1.1vh, 12px) clamp(12px, 1.2vw, 16px) clamp(8px, 1.1vh, 12px)
-    clamp(40px, 3vw, 48px);
-  min-height: clamp(40px, 6vh, 54px);
-  transition: border-color 0.15s, box-shadow 0.15s, background 0.2s;
-}
-
-.control:is(:focus-within) {
-  border-color: #178f43;
-  box-shadow: 0 0 0 4px #178f4325;
-}
-
-.control.is-disabled {
-  opacity: 0.7;
-}
-
-.control.is-invalid {
-  border-color: #e53e3e;
-  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.18);
-}
-
-.ctrl-icon {
-  position: absolute;
-  left: clamp(12px, 1.2vw, 14px);
-  top: 50%;
-  transform: translateY(-50%);
-  color: #7a8895;
-  display: inline-grid;
-  place-items: center;
+  background: #fff;
+  overflow: hidden;
 }
 
 .control input {
-  width: 100%;
+  height: 54px;
   border: none;
   outline: none;
-  background: transparent;
-  font-size: clamp(0.98rem, 1vw, 1.12rem);
-  color: #1f2937;
-  padding: 0;
-  margin: 0;
+  padding: 0 10px;
+  font-size: 16px;
 }
 
-/* error text (ใต้ช่อง) */
-.err-text {
-  margin-top: 6px;
-  color: #e53e3e;
-  font-size: 0.88rem;
+.ctrl-icon,
+.ctrl-append {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6a7780;
 }
 
 .ctrl-append {
-  display: inline-grid;
-  place-items: center;
+  width: 52px;
+  min-width: 52px;
+  height: 100%;
   border: none;
-  background: #2f4858;
+  background: #31414f;
   color: #fff;
-  padding: clamp(6px, 0.9vh, 8px) clamp(10px, 1vw, 12px);
-  border-radius: 10px;
-  margin-left: clamp(8px, 1vw, 12px);
   cursor: pointer;
-  transition: opacity 0.18s, transform 0.06s;
+  padding: 0;
+  flex-shrink: 0;
 }
 
-.ctrl-append:hover {
-  opacity: 0.92;
+.ctrl-append svg {
+  display: block;
 }
 
-.ctrl-append:active {
-  transform: scale(0.98);
+.is-invalid {
+  border-color: #e14b4b;
 }
 
-.ctrl-append:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.is-disabled {
+  opacity: 0.7;
 }
 
-/* submit */
+.err-text {
+  margin: 8px 0 0;
+  color: #c0392b;
+  font-size: 13px;
+}
+
 .login-btn {
-  margin-top: clamp(6px, 1vh, 10px);
-  width: 100%;
-  background: #1490ee;
-  color: #fff;
+  height: 56px;
   border: none;
-  border-radius: 12px;
-  padding: clamp(11px, 1.3vh, 14px) 0;
-  font-size: clamp(1rem, 1vw, 1.12rem);
-  font-weight: 800;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #2f72bf, #2d8de0);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.18s, opacity 0.18s;
-}
-
-.login-btn:hover {
-  background: #007ed8;
 }
 
 .login-btn:disabled {
-  opacity: 0.75;
   cursor: not-allowed;
+  opacity: 0.75;
 }
 
-/* ===== Loading / Error ===== */
-.overlay {
+.overlay,
+.error-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(2px);
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31, 41, 55, 0.28);
   z-index: 1000;
 }
 
+.loader-wrap,
+.error-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+}
+
 .loader-wrap {
+  padding: 30px 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 22px 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  border: 1px solid #eee;
 }
 
 .spinner {
   width: 42px;
   height: 42px;
-  border: 4px solid #e3e3e3;
+  border-radius: 999px;
+  border: 4px solid #dce8de;
   border-top-color: #178f43;
-  border-radius: 50%;
   animation: spin 0.9s linear infinite;
 }
 
 .loader-text {
-  color: #2b2b2b;
+  color: #244131;
   font-weight: 600;
-  font-size: 0.98rem;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.error-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.16);
-  z-index: 1100;
-  display: grid;
-  place-items: start center;
-  padding-top: 10vh;
 }
 
 .error-card {
-  width: min(520px, 92vw);
-  background: #fff;
-  border: 1px solid #ffd7d7;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  border-radius: 14px;
-  padding: 18px;
+  width: min(92vw, 520px);
+  padding: 22px 24px;
+  border: 1px solid #ffd4ce;
 }
 
 .error-head {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #cc2e2e;
-  font-weight: 700;
-  margin-bottom: 6px;
+  gap: 8px;
+  color: #d14343;
+  margin-bottom: 12px;
 }
 
 .error-body {
-  margin: 6px 0 12px;
-  color: #333;
-  line-height: 1.5;
+  margin: 0 0 16px;
+  color: #2f3440;
+  line-height: 1.7;
+  word-break: break-word;
 }
 
 .error-close {
-  margin-left: auto;
-  background: #cc2e2e;
-  color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 16px;
+  background: #d14343;
+  color: #fff;
+  font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.18s;
 }
 
-.error-close:hover {
-  opacity: 0.9;
-}
-
-/* ===== Transitions ===== */
 .fade-fast-enter-active,
 .fade-fast-leave-active {
   transition: opacity 0.18s ease;
@@ -664,21 +529,20 @@ const handleLogin = async () => {
   opacity: 0;
 }
 
-/* ===== Breakpoints ===== */
-@media (max-width: 900px) {
-  .login-card {
-    width: min(92vw, 600px);
-  }
-
-  .row {
-    grid-template-columns: clamp(96px, 26vw, 132px) 1fr;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
 @media (max-width: 640px) {
+  .main {
+    padding-top: 24px;
+  }
+
   .login-card {
-    width: 92vw;
-    padding: 18px 16px;
+    padding: 20px 16px;
+    border-radius: 16px;
   }
 
   .row {
@@ -686,18 +550,21 @@ const handleLogin = async () => {
   }
 
   .label-col {
-    justify-self: start;
     margin-bottom: 6px;
   }
 
   .control {
-    padding-left: clamp(38px, 8vw, 48px);
+    grid-template-columns: 40px 1fr 48px;
   }
 
-  .main {
-    padding-top: clamp(12px, 7vh, 80px);
+  .ctrl-append {
+    width: 48px;
+    min-width: 48px;
   }
 
-  /* มือถือให้ขึ้นมาใกล้หัวมากขึ้น */
+  .control input {
+    height: 50px;
+    font-size: 15px;
+  }
 }
 </style>

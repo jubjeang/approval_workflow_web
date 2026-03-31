@@ -1,0 +1,2166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document
+  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:w10="urn:schemas-microsoft-com:office:word"
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+  mc:Ignorable="w14 wp14">
+  <w:body>
+    
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="160"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="34"/><w:szCs w:val="34"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Approval Workflow System User Manual</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="220"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          <w:color w:val="45685A"/>
+        </w:rPr>
+        <w:t xml:space="preserve">This manual was prepared from live system screens captured on March 24, 2026. It documents the workflow for requesters, approvers, and users who act from approval links sent by email.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">1. System Overview and User Roles</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">Approval Workflow System is used to create request documents, submit them into an approval workflow, monitor status, and perform approval actions either inside the application or from a public email link.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Requester users can create, edit, and monitor their own documents.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Approver users can review pending documents and perform Approve, Reject, or Return.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Users who receive the email link can open the Public Approval page directly and act on the document.</w:t>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">2. Login Screen</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">The login screen contains the Username field, Password field, and Sign In button used to access the system with an authorized account.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Enter a valid Username and Password.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Click Sign In to enter the system.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. If the credentials are invalid, the system shows an on-screen error message.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 1. Login screen</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="4389120"/>
+            <wp:docPr id="1" name="Figure 1. Login screen"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 1. Login screen"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId1"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="4389120"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">3. Requester Dashboard</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">When signed in as a requester, the dashboard displays summary cards, department documents, and recent activity to help track work quickly.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Review the summary cards at the top of the page.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Check the Latest Department Documents panel on the right side.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Use Open List or View All to navigate to related pages.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 2. Requester dashboard</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="5120640"/>
+            <wp:docPr id="2" name="Figure 2. Requester dashboard"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 2. Requester dashboard"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId2"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="5120640"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">4. Approver Dashboard</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">When signed in with approval permissions, the dashboard shows pending item counts, pending tasks, and recent actions related to the approver account.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Review Your Pending Items to see how many documents require action.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Inspect the Your Pending Approvals block.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Use Open List to navigate directly to the pending approvals page.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 3. Approver dashboard</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="5852160"/>
+            <wp:docPr id="3" name="Figure 3. Approver dashboard"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 3. Approver dashboard"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId3"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="5852160"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">5. Approval Requests Page</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">The Approval Requests page lists request documents from the same department as the signed-in user and provides search, filtering, edit, and delete actions based on status and permission.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Use Search to find a document by document number, title, or document type.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Use Status to filter the list by available system statuses.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Review the table and use Edit or Delete according to permission and current document status.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 4. Approval Requests page</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="5120640"/>
+            <wp:docPr id="4" name="Figure 4. Approval Requests page"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 4. Approval Requests page"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId4"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="5120640"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">6. Creating a New Document</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">Requesters can click Create Document to open the add form. The form includes document type selection, header information, item lines, and attachments.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Click Create Document.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Select the appropriate Document Type.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Enter the header values such as Country, Company, Request Date, and Project Title Description.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">4. Enter item details in the Items table, including Project Description, Qty, Price, and Amount.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">5. Attach supporting files in the Attach File section when required.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">6. Click Save &amp; Submit to start the workflow or Save Draft to keep a draft copy.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 5. Add Form used to create a new document</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="6583680"/>
+            <wp:docPr id="5" name="Figure 5. Add Form used to create a new document"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 5. Add Form used to create a new document"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId5"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="6583680"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">7. Editing a Returned Document</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">When a document is returned, the requester can reopen the form, revise the existing data, and submit the document again.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Locate the document whose latest result is Returned.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Click Edit to open the edit form.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Update the necessary fields, item lines, or attachments.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">4. Click Save &amp; Submit to return the document to the workflow.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Document Type is locked and cannot be changed for returned documents.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 6. Edit Form for a returned document</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="6583680"/>
+            <wp:docPr id="6" name="Figure 6. Edit Form for a returned document"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 6. Edit Form for a returned document"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId6"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="6583680"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">8. Pending Approvals Page</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">Approvers use the Pending Approvals page to review the documents currently assigned to their workflow step.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Use Search to find a document by document number, title, requester, or department.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Use Status to narrow the list.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Click Open for the document you want to review.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 7. Pending Approvals page</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="5120640"/>
+            <wp:docPr id="7" name="Figure 7. Pending Approvals page"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 7. Pending Approvals page"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId7"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="5120640"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">9. Acting from the Pending Detail Window</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">The Approval Detail window presents the document header, item list, remark field, attachments, and approval navigator so the approver can make a decision with full context.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Review the header information and item details carefully.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Read the remark and approval history when available.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Inspect the Approval Steps navigator to understand the current workflow position.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">4. Enter a remark when rejecting or returning the document.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">5. Click Approve, Reject, or Return as needed.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 8. Pending approval detail window</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="8046720"/>
+            <wp:docPr id="8" name="Figure 8. Pending approval detail window"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 8. Pending approval detail window"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId8"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="8046720"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">10. Approval History Page</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">The Approval History page summarizes documents the user has acted on and documents owned by the user that have recent workflow activity.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Review the summary cards for Approved, Returned, Rejected, and In Progress.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Use Search and Status to locate historical records.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Click Open to inspect a document in detail.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 9. Approval History page</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="5852160"/>
+            <wp:docPr id="9" name="Figure 9. Approval History page"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 9. Approval History page"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId9"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="5852160"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">11. Approval History Detail Window</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">Opening a record from Approval History shows a read-only detail window with document information, attachments, approval steps, and approval history.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Review the document header, item lines, and attachments.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Use the Approval Steps navigator to see completed, returned, and waiting stages.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Use the Approval History section to review timestamps, actors, actions, and remarks.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 10. History detail window</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="8046720"/>
+            <wp:docPr id="10" name="Figure 10. History detail window"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 10. History detail window"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId10"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="8046720"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">12. Approving from the Email Link</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="120"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">When the system sends an approval email, the approver can click the public link and open a standalone approval page without entering the main navigation.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">1. Open the approval email and click the document link.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">2. Review the document header, item details, and approval navigator.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">3. Enter a remark if you plan to Reject or Return.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">4. Click Approve, Reject, or Return to complete the action.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- If the public link is expired, already used, or revoked, the page will no longer allow action.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="120" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="20"/><w:szCs w:val="20"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Figure 11. Public approval page opened from email</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="80" w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+            xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+            <wp:extent cx="5852160" cy="8046720"/>
+            <wp:docPr id="11" name="Figure 11. Public approval page opened from email"/>
+            <wp:cNvGraphicFramePr>
+              <a:graphicFrameLocks noChangeAspect="1"/>
+            </wp:cNvGraphicFramePr>
+            <a:graphic>
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                <pic:pic>
+                  <pic:nvPicPr>
+                    <pic:cNvPr id="0" name="Figure 11. Public approval page opened from email"/>
+                    <pic:cNvPicPr/>
+                  </pic:nvPicPr>
+                  <pic:blipFill>
+                    <a:blip r:embed="rId11"/>
+                    <a:stretch><a:fillRect/></a:stretch>
+                  </pic:blipFill>
+                  <pic:spPr>
+                    <a:xfrm>
+                      <a:off x="0" y="0"/>
+                      <a:ext cx="5852160" cy="8046720"/>
+                    </a:xfrm>
+                    <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+                  </pic:spPr>
+                </pic:pic>
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+        </w:drawing>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">13. Status Definitions</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Draft: The document is saved but has not been submitted into the workflow.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Inprocess: The document is already in the workflow and is waiting at the current step.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Approved: The document completed all approval steps successfully.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Returned: The document was returned to the requester for revision and resubmission.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Rejected: The document was rejected and the workflow ended.</w:t>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:spacing w:before="220" w:after="140"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="28"/><w:szCs w:val="28"/>
+          <w:color w:val="135C31"/>
+        </w:rPr>
+        <w:t xml:space="preserve">14. Usage Recommendations</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Provide a clear project title and complete item details before submitting a document.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- When a document is returned, always read the approver remark before editing.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- If acting from the email link, complete the action before the public token expires.</w:t>
+      </w:r>
+    </w:p>
+  
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:after="80"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="22"/><w:szCs w:val="22"/>
+          
+        </w:rPr>
+        <w:t xml:space="preserve">- Use Approval History to review previous actions and timestamps for every workflow step.</w:t>
+      </w:r>
+    </w:p>
+  
+
+  <w:p>
+    <w:pPr><w:spacing w:after="120"/></w:pPr>
+  </w:p>
+
+
+    <w:p>
+      <w:pPr>
+        
+        <w:spacing w:before="180" w:after="60"/>
+        
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          
+          <w:sz w:val="18"/><w:szCs w:val="18"/>
+          <w:color w:val="5A7A6B"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Generated from the current project workspace on 2026-03-24.</w:t>
+      </w:r>
+    </w:p>
+  
+    <w:sectPr>
+      <w:pgSz w:w="11906" w:h="16838"/>
+      <w:pgMar w:top="1008" w:right="1008" w:bottom="1008" w:left="1008" w:header="708" w:footer="708" w:gutter="0"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

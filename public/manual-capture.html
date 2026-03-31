@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual Capture</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        overflow: hidden;
+        font-family: Segoe UI, Arial, sans-serif;
+      }
+
+      #app {
+        width: 100%;
+        height: 100%;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        background: #ffffff;
+      }
+
+      .status {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        z-index: 9999;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(20, 35, 28, 0.85);
+        color: #ffffff;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="status" id="status">Preparing capture...</div>
+    <script>
+      const params = new URLSearchParams(location.search)
+      const app = document.getElementById('app')
+      const status = document.getElementById('status')
+
+      const user = params.get('user') || ''
+      const appId = Number(params.get('appId') || '3')
+      const targetPath = params.get('path') || '/'
+      const clickSelectors = (params.get('click') || '')
+        .split('||')
+        .map((part) => part.trim())
+        .filter(Boolean)
+      const actionScript = params.get('script') || ''
+      const waitAfterLoad = Number(params.get('wait') || '2500')
+      const waitAfterClick = Number(params.get('clickWait') || '1200')
+
+      const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+      async function ensureAuth(username) {
+        if (!username) {
+          return
+        }
+
+        const response = await fetch('http://localhost:4003/getuserinfo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, app_id: appId }),
+        })
+
+        if (!response.ok) {
+          throw new Error(`Unable to load user info for ${username}`)
+        }
+
+        const data = await response.json()
+        localStorage.setItem('user', JSON.stringify(data.user))
+        localStorage.setItem('access_token', data.access_token)
+        localStorage.setItem('authToken', data.access_token)
+      }
+
+      function resolveTarget(doc, rawSelector) {
+        const enabledOnly = rawSelector.endsWith('::enabled')
+        const selector = enabledOnly ? rawSelector.slice(0, -9) : rawSelector
+        const elements = [...doc.querySelectorAll(selector)]
+        if (!enabledOnly) {
+          return elements[0] || null
+        }
+        return elements.find((el) => !el.disabled && !el.getAttribute('disabled')) || null
+      }
+
+      async function waitForSelector(doc, selector, timeout = 12000) {
+        const started = Date.now()
+        while (Date.now() - started < timeout) {
+          const el = resolveTarget(doc, selector)
+          if (el) return el
+          await sleep(150)
+        }
+        throw new Error(`Selector not found: ${selector}`)
+      }
+
+      async function run() {
+        try {
+          status.textContent = 'Authenticating...'
+          await ensureAuth(user)
+
+          const frame = document.createElement('iframe')
+          frame.src = targetPath
+          app.replaceChildren(frame)
+
+          await new Promise((resolve, reject) => {
+            frame.onload = () => resolve()
+            frame.onerror = () => reject(new Error('Failed to load target page'))
+          })
+
+          const frameWindow = frame.contentWindow
+          const frameDocument = frame.contentDocument
+
+          status.textContent = 'Waiting for page data...'
+          await sleep(waitAfterLoad)
+
+          for (const selector of clickSelectors) {
+            status.textContent = `Clicking ${selector}...`
+            const el = await waitForSelector(frameDocument, selector)
+            el.click()
+            await sleep(waitAfterClick)
+          }
+
+          if (actionScript) {
+            status.textContent = 'Running capture script...'
+            const runner = new Function(
+              'frameWindow',
+              'frameDocument',
+              'sleep',
+              'waitForSelector',
+              `return (async () => { ${actionScript} })();`
+            )
+            await runner(frameWindow, frameDocument, sleep, waitForSelector)
+          }
+
+          frameWindow.scrollTo(0, 0)
+          status.textContent = 'READY'
+          await sleep(400)
+          status.style.display = 'none'
+          document.title = 'READY'
+        } catch (error) {
+          console.error(error)
+          status.textContent = `ERROR: ${error.message}`
+          document.title = 'ERROR'
+        }
+      }
+
+      run()
+    </script>
+  </body>
+</html>
